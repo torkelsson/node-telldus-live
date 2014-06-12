@@ -26,9 +26,15 @@ cloud = new TelldusAPI.TelldusAPI({ publicKey  : publicKey
         if (!!err) return console.log(s + ' id=' + p.id + ': ' + err.message);
 
         console.log('sensor #' + offset + ' ' + s + ': '); console.log(sensor);
-        props =  { temp     : [ 'temperature', 'celcius',    'meteo' ]
-                 , humidity : [ 'humidity',    'percentage', 'meteo' ]
+        props =  { temp     : [ 'temperature',    'celcius',    'meteo' ]
+                 , humidity : [ 'humidity',       'percentage', 'meteo' ]
+                 , rrate    : [ 'rain rate',      'mm/h',       'meteo' ]
+                 , rtot     : [ 'rain total',     'mm',         'meteo' ]
+		 , wavg     : [ 'wind average',   'm/s',        'meteo' ]
+		 , wgust    : [ 'wind gust',      'm/s',        'meteo' ]
+		 , wdir     : [ 'wind direction', 'degrees',    'meteo' ]
                  };
+
 
         type = null;
         for (i = 0; i < sensor.data.length; i++) {
